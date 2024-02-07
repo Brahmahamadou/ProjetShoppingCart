@@ -1,90 +1,137 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
-#items{
-    width: 150px;
-    height: 40px;
-    border: 1px solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#items {
+  width: 150px;
+  height: 40px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 }
-#items:hover{
-    background-color: #ee839d;
-    color: white;
-    cursor: pointer;
+#items:hover {
+  background-color: #ee839d;
+  color: white;
+  cursor: pointer;
 }
-.contenant p{
-    display: flex;
+.contenant p {
+  display: flex;
 }
-#premierImage{
-    width: 100%;
-    height: 80.3rem;
-    background: url(f3fbf0eb3d6848e0bfd64156ebeeaca4.jpg) center/cover fixed no-repeat;
-    position: relative;
+#premierImage {
+  width: 100%;
+  height: 80.3rem;
+  background: url(f3fbf0eb3d6848e0bfd64156ebeeaca4.jpg) center/cover fixed
+    no-repeat;
+  position: relative;
 }
-.image1{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.image1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
-.navbar-nav a{
-    color: #ee839d;
-    font-size: 20px;
+.navbar-nav a {
+  color: #ee839d;
+  font-size: 20px;
 }
-.explor{
-    margin-top: 20rem;
+.explor {
+  margin-top: 20rem;
+  color: #ee839d;
 }
-.cadre{
-    width: 100px;
-    height: 40px;
-    border: 1px solid;
-    margin-left: 6rem;
+.cadre {
+  width: 100px;
+  height: 40px;
+  border: 1px solid;
+  margin-left: 6rem;
 }
-.cadre2{
-    width: 400px;
-    height: 400px;
-    border: 2px solid;
-    border-color: gold;
+.cadre2 {
+  width: 400px;
+  height: 400px;
+  border: 2px solid;
+  border-color: gold;
 }
-.about{
-    margin-top: 7rem;
+.about {
+  margin-top: 7rem;
 }
-.str{
+.str {
   display: flex;
   justify-content: center;
 }
-.bu{
-    width: 700px;
-    display: flex;
-    justify-content: space-around;
+.bu {
+  width: 700px;
+  display: flex;
+  justify-content: space-around;
 }
-.bus{
-    border: 1px solid;
-    height: 40px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+.bus {
+  border: 1px solid;
+  height: 40px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
-.card{
-    height: 350px;
-    width: 25rem;
+.bus:hover {
+  border: 1px solid;
+  height: 40px;
+  background-color: dimgrey;
+  border-radius: 5px;
+  color: aliceblue;
 }
-.monContenu{
-    background-color:#f0f0f0;
-    margin-top: 5rem;
+.card {
+  height: 350px;
+  width: 25rem;
 }
-#coffre{
-    width: 50px;
-    height: 50px;
-    background-color: cadetblue;
-    position: absolute;
-    transform: translate(700%, 420%);
-    border-top-left-radius: 30px;
+.card img {
+  cursor: pointer;
 }
-#coffre i{
-    font-size: 25px;
+.monContenu {
+  background-color: #f0f0f0;
+  margin-top: 5rem;
 }
-.hidden{
-    display: none;
+#coffre {
+  width: 50px;
+  height: 50px;
+  background-color: cadetblue;
+  position: absolute;
+  transform: translate(700%, 420%);
+  border-top-left-radius: 30px;
+  color: antiquewhite;
+}
+#coffre i {
+  font-size: 25px;
+}
+.hidden {
+  display: none;
+}
+.hidd {
+  display: none;
+}
+#card:hover #coffre {
+  display: block;
+  cursor: pointer;
+}
+#card {
+  position: relative; /* Permet de positionner les éléments enfants par rapport à la carte */
+  overflow: hidden; /* Masque le contenu qui dépasse les limites de la carte */
+}
+#card img:hover {
+  transform: scale(
+    1.2
+  ); /* Augmente la taille de l'image de 10% lorsqu'elle est survolée */
+  transition: transform 0.3s ease; /* Ajoute une transition fluide pour un effet plus agréable */
+}
+#card img:hover #coffre {
+  transform: translate(700%, 470%) !important;
+}
+.lesachats {
+  position: absolute;
+  width: 300px;
+  background-color: #ee839d;
+  height: 300px;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
 }
