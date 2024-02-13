@@ -105,21 +105,27 @@ body {
 .hidd {
   display: none;
 }
-#card:hover #coffre {
+.card:hover #coffre {
   display: block;
   cursor: pointer;
 }
-#card {
+.card {
   position: relative; /* Permet de positionner les éléments enfants par rapport à la carte */
   overflow: hidden; /* Masque le contenu qui dépasse les limites de la carte */
 }
-#card img:hover {
+.card img:hover {
   transform: scale(
     1.2
   ); /* Augmente la taille de l'image de 10% lorsqu'elle est survolée */
   transition: transform 0.3s ease; /* Ajoute une transition fluide pour un effet plus agréable */
 }
-#card img:hover #coffre {
+.cadre2 img:hover {
+  transform: scale(
+    1.1
+  ); /* Augmente la taille de l'image de 10% lorsqu'elle est survolée */
+  transition: transform 0.3s ease; /* Ajoute une transition fluide pour un effet plus agréable */
+}
+.card img:hover #coffre {
   transform: translate(700%, 470%) !important;
 }
 .lesachats {

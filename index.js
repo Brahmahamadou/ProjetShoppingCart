@@ -12,46 +12,65 @@ let btnSearch = document.getElementById("bi-search");
 let tbodyUn = document.getElementById("tbodyUn");
 let tbodydeux = document.getElementById("tbodydeux");
 let tbodytrois = document.getElementById("tbodytrois");
-// funtion Pour afficher les cardes du datas.js
+
+// fonction pour afficher les cartes du fichier datas.js
+
+function myLocal() {
+  localStorage.setItem('tabLocal', JSON.stringify(tabLocalStorage))
+}
+let tabLocalStorage = JSON.parse(localStorage.getItem("tabLocal")) || [];
 function mesCardes(card) {
-    card.forEach((element) => {
-        let dataElement = element;
-        ligne1.innerHTML += `
-      <div id="card" class="card m-2 col-lg-4 col-md-4 col-sm-12">
+  card.forEach((element) => {
+    let dataElement = element;
+    ligne1.innerHTML += `
+    <div id="${dataElement.id}"  class="card m-2 col-lg-4 col-md-4 col-sm-12">
           <img src="${dataElement.scr}" alt="..." class="h-75 card-img-top">
           <div class="card-body d-flex align-items-center justify-content-between">
               <h5 class="card-title">${dataElement.name}</h5>
-              <p>${dataElement.paragraphe}</p>
+              <p>${dataElement.price}</p>
           </div>
-          <div id="coffre" onclick="addtocoffre()" class="hidd">
-          <div class="d-flex mt-2 justify-content-center">
-          <i class="bi bi-cart-fill"></i>
+          <div id="coffre" class="hidd">
+          <div class="d-flex mt-2 justify-content-center" >
+          <i  class="bi bi-cart-fill"></i>
           </div>
           </div>
       </div>
       `
-    });
+  });
 }
-mesCardes(datas.mesimages);
+mesCardes(datas);
+const cartItemsshopping = document.querySelectorAll('.bi-cart-fill')
+cartItemsshopping.forEach((cartItem) => {
+  cartItem.addEventListener("click", function () {
+    let tabLocalStorage = JSON.parse(localStorage.getItem("tabLocal")) || [];
+const itemId = parseInt(cartItem.parentElement.parentElement.parentElement.id);
+      const selectedItem = datas.find((item) => item.id === itemId );
+      
+      // Vérifiez si l'article existe déjà dans le panier
+     if (selectedItem) {
+      tabLocalStorage.push(selectedItem);
+      myLocal()
+     }
+     console.log(tabLocalStorage);
+          // Ajoutez l'article au panier
+        
+  });
+});
 
-myCoffre.addEventListener("click", function (e) {
-    e.preventDefault();
-    tbodytrois.innerHTML = "";
-    tbodytrois.innerHTML += `
-    <tr>
-    <td><i class="bi bi-pci-card"></i></td>
-    <td>Items- </td>
-    <td><i class="bi bi-currency-dollar"></i></td>
-    <td>0.00</td>
-  </tr>
-    `
-})
-
-
-
-
-
-
+// function bntCoffre(index) {
+//   tbodytrois.innerHTML = "";
+//   tabLocalStorage.forEach((element, idx) => {
+    
+//     tbodytrois.innerHTML += `
+//       <tr>
+//         <td><i class="bi bi-pci-card"></i><span>${idx + 1}</span></td>
+//         <td></td>
+//         <td><i class="bi bi-currency-dollar"></i></td>
+//         <td>0.00</td>
+//       </tr>
+//     `;
+//   });
+// }
 
 
 
